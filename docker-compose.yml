@@ -1,0 +1,13 @@
+services:
+  tiktok-web-api:
+    build: .
+    image: tiktok-web-api
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      PORT: ${PORT:-3000}
+      TIKTOK_MIN_REQUEST_INTERVAL_MS: ${TIKTOK_MIN_REQUEST_INTERVAL_MS:-2000}
+    restart: unless-stopped

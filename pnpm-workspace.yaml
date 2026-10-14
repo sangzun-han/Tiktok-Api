@@ -1,0 +1,4 @@
+strictDepBuilds: false
+allowBuilds:
+  '@nestjs/core': false
+  koffi: false
